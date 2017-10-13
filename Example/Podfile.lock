@@ -1,0 +1,19 @@
+PODS:
+  - CandyAttribute (0.0.1):
+    - SwiftyAttributes (= 4.1.0)
+  - SwiftyAttributes (4.1.0)
+
+DEPENDENCIES:
+  - CandyAttribute (from `../`)
+
+EXTERNAL SOURCES:
+  CandyAttribute:
+    :path: ../
+
+SPEC CHECKSUMS:
+  CandyAttribute: d0ffc75c27b5db030d0df865bda3b0497a1a8d3e
+  SwiftyAttributes: cef9463f6e7da1ab393896ca036c9ac37d8a406b
+
+PODFILE CHECKSUM: 90cdffcb1dc9fefda3db635277ecf8eaa1b5c450
+
+COCOAPODS: 1.4.0.beta.1

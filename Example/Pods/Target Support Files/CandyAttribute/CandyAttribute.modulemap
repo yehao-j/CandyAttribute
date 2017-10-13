@@ -1,0 +1,6 @@
+framework module CandyAttribute {
+  umbrella header "CandyAttribute-umbrella.h"
+
+  export *
+  module * { export * }
+}

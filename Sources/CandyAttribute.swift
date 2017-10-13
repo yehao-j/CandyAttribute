@@ -8,7 +8,7 @@
 
 import SwiftyAttributes
 
-struct CandyAttribute {}
+public struct CandyAttribute {}
 
 extension CandyAttribute {
     static func dictionary(from attributes: [Attribute]) -> [StringKey: Any] {
@@ -95,11 +95,11 @@ extension CandyAttribute {
         return dictionary(from: [Attribute.shadow(shadow)])
     }
 
-    public static func withAttributes(_ attributes: [Attribute]) -> [String: Any] {
+    public static func withAttributes(_ attributes: [Attribute]) -> [StringKey: Any] {
         return dictionary(from: attributes)
     }
 
-    public static func withAttribute(_ attribute: Attribute) -> [String: Any] {
+    public static func withAttribute(_ attribute: Attribute) -> [StringKey: Any] {
         return dictionary(from: [attribute])
     }
 }
@@ -187,12 +187,11 @@ extension Dictionary where Key == StringKey {
         return self + CandyAttribute.dictionary(from: [Attribute.shadow(shadow)])
     }
 
-    public func withAttributes(_ attributes: [Attribute]) -> [String: Any] {
+    public func withAttributes(_ attributes: [Attribute]) -> [StringKey: Any] {
         return self + CandyAttribute.dictionary(from: attributes)
     }
 
-    public func withAttribute(_ attribute: Attribute) -> [String: Any] {
+    public func withAttribute(_ attribute: Attribute) -> [StringKey: Any] {
         return self + CandyAttribute.dictionary(from: [attribute])
     }
 }
-

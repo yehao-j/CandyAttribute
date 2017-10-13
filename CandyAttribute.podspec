@@ -10,6 +10,7 @@ Pod::Spec.new do |s|
 
     s.ios.deployment_target = '8.0'
 
+    s.frameworks = 'Foundation'
     s.source_files = 'Sources/*.swift'
     s.dependency 'SwiftyAttributes', '4.1.0'
 
