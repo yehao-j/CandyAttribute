@@ -8,6 +8,9 @@
 
 import SwiftyAttributes
 
+public typealias StringKey = SwiftyAttributes.StringKey
+public typealias Attribute = SwiftyAttributes.Attribute
+
 public struct CandyAttribute {}
 
 extension CandyAttribute {
