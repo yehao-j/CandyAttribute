@@ -106,6 +106,12 @@ extension CandyAttribute {
     public static func withAttribute(_ attribute: Attribute) -> [StringKey: Any] {
         return dictionary(from: [attribute])
     }
+
+    public static func withLineSpacing(_ lineSpacing: CGFloat) -> [StringKey: Any] {
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = lineSpacing
+        return dictionary(from: [Attribute.paragraphStyle(style)])
+    }
 }
 
 extension Dictionary where Key == StringKey {
@@ -124,6 +130,12 @@ extension Dictionary where Key == StringKey {
     }
 
     public func withParagraphStyle(_ style: ParagraphStyle) -> [StringKey: Any] {
+        return self + CandyAttribute.dictionary(from: [Attribute.paragraphStyle(style)])
+    }
+
+    public func withLineSpacing(_ lineSpacing: CGFloat) -> [StringKey: Any] {
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = lineSpacing
         return self + CandyAttribute.dictionary(from: [Attribute.paragraphStyle(style)])
     }
 
@@ -215,6 +227,20 @@ extension NSAttributedString {
         let combinedString = NSMutableAttributedString(string: rhs)
         combinedString.append(lhs)
         return combinedString
+    }
+
+    public func withLineSpacing(_ lineSpacing: CGFloat) -> NSMutableAttributedString {
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = lineSpacing
+        return withAttribute(.paragraphStyle(style))
+    }
+}
+
+extension String {
+    public func withLineSpacing(_ lineSpacing: CGFloat) -> NSMutableAttributedString {
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = lineSpacing
+        return withAttribute(.paragraphStyle(style))
     }
 }
 

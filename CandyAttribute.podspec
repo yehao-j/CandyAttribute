@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
     s.name         = 'CandyAttribute'
-    s.version      = '0.0.2'
+    s.version      = '0.0.3'
     s.summary      = '富文本字典'
     s.homepage     = 'https://github.com/J-yezi/CandyAttribute'
     s.license      = { :type => 'MIT', :file => 'LICENSE' }
