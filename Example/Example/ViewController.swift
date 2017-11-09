@@ -8,6 +8,7 @@
 
 import UIKit
 import CandyAttribute
+import SwiftyAttributes
 
 class ViewController: UIViewController {
 
@@ -20,15 +21,7 @@ class ViewController: UIViewController {
         label.textAlignment = .center
         view.addSubview(label)
 
-
-        label.attributedText = NSMutableAttributedString(string: "大家看法", attributes: CandyAttribute.withTextColor(.red))
+        label.attributedText = "String" + "NSAttributeString".withTextColor(.red).withFont(.systemFont(ofSize: 12))
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 

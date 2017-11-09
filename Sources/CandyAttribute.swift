@@ -95,6 +95,10 @@ extension CandyAttribute {
         return dictionary(from: [Attribute.shadow(shadow)])
     }
 
+    public static func withLink(_ link: URL) -> [StringKey: Any] {
+        return dictionary(from: [Attribute.link(link)])
+    }
+
     public static func withAttributes(_ attributes: [Attribute]) -> [StringKey: Any] {
         return dictionary(from: attributes)
     }
@@ -175,6 +179,10 @@ extension Dictionary where Key == StringKey {
         return self + CandyAttribute.dictionary(from: [Attribute.expansion(expansion)])
     }
 
+    public func withLink(_ link: URL) -> [StringKey: Any] {
+        return self + CandyAttribute.dictionary(from: [Attribute.link(link)])
+    }
+
     public func withWritingDirections(_ directions: [WritingDirection]) -> [StringKey: Any] {
         return self + CandyAttribute.dictionary(from: [Attribute.writingDirections(directions)])
     }
@@ -195,3 +203,18 @@ extension Dictionary where Key == StringKey {
         return self + CandyAttribute.dictionary(from: [attribute])
     }
 }
+
+extension NSAttributedString {
+    public static func +(lhs: String, rhs: NSAttributedString) -> NSAttributedString {
+        let combinedString = NSMutableAttributedString(string: lhs)
+        combinedString.append(rhs)
+        return combinedString
+    }
+
+    public static func +(lhs: NSAttributedString, rhs: String) -> NSAttributedString {
+        let combinedString = NSMutableAttributedString(string: rhs)
+        combinedString.append(lhs)
+        return combinedString
+    }
+}
+
