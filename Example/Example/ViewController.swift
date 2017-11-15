@@ -23,8 +23,7 @@ class ViewController: UIViewController {
         label.textAlignment = .center
         view.addSubview(label)
 
-        label.attributedText = NSAttributedString(string: "减肥开始大家反馈剑荡四方卡视角开始大家疯狂的教辅时代峻峰看撒娇的罚款", attributes: CandyAttribute.withLineSpacing(50))
-        label.attributedText = "减肥开始大家反馈剑荡四方卡视角开始大家疯狂的教辅时代峻峰看撒娇的罚款".withFont(UIFont.systemFont(ofSize: 36)).withLineSpacing(50).withTextColor(UIColor.red)
+        label.attributedText = "验证码将发送到" + "1433333333333".withTextColor(UIColor.red) + "，请确认此号码为你本人的手机号。"
     }
 }
 

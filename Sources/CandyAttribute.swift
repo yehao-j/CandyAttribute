@@ -227,8 +227,8 @@ extension NSAttributedString {
     }
 
     public static func +(lhs: NSAttributedString, rhs: String) -> NSAttributedString {
-        let combinedString = NSMutableAttributedString(string: rhs)
-        combinedString.append(lhs)
+        let combinedString = (lhs.mutableCopy() as! NSMutableAttributedString)
+        combinedString.append(NSMutableAttributedString(string: rhs))
         return combinedString
     }
 
