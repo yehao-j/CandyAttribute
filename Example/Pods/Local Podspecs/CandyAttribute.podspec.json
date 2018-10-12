@@ -1,6 +1,6 @@
 {
   "name": "CandyAttribute",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "summary": "富文本字典",
   "homepage": "https://github.com/J-yezi/CandyAttribute",
   "license": {
@@ -12,7 +12,7 @@
   },
   "source": {
     "git": "https://github.com/J-yezi/CandyAttribute.git",
-    "tag": "0.0.1"
+    "tag": "0.0.5"
   },
   "platforms": {
     "ios": "8.0"
@@ -21,7 +21,7 @@
   "source_files": "Sources/*.swift",
   "dependencies": {
     "SwiftyAttributes": [
-      "4.1.0"
+      ">=5.0.0"
     ]
   }
 }

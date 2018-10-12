@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
     s.name         = 'CandyAttribute'
-    s.version      = '0.0.5'
+    s.version      = '0.0.6'
     s.summary      = '富文本字典'
     s.homepage     = 'https://github.com/J-yezi/CandyAttribute'
     s.license      = { :type => 'MIT', :file => 'LICENSE' }
@@ -12,6 +12,6 @@ Pod::Spec.new do |s|
 
     s.frameworks = 'Foundation'
     s.source_files = 'Sources/*.swift'
-    s.dependency 'SwiftyAttributes', '4.1.0'
+    s.dependency 'SwiftyAttributes', '>=5.0.0'
 
 end

@@ -9,7 +9,7 @@
 import Foundation
 
 #if swift(>=4.0)
-    public typealias StringKey = NSAttributedStringKey
+    public typealias StringKey = AttributeName
 #else
     public typealias StringKey = String
 #endif
@@ -27,11 +27,11 @@ extension NSAttributedString {
     /**
      Creates a new `NSAttributedString` with the specified attributes.
      
-     - parameter    str:            The string for the new attributed string.
-     - parameter    attributes:     The attributes for the new attributed string.
+     - parameter    str:                The string for the new attributed string.
+     - parameter    swiftyAttributes:   The attributes for the new attributed string.
      */
-    public convenience init(string str: String, attributes: [Attribute]) {
-        self.init(string: str, attributes: dictionary(from: attributes))
+    public convenience init(string str: String, swiftyAttributes attrs: [Attribute]) {
+        self.init(string: str, attributes: dictionary(from: attrs))
     }
 
     /**
@@ -373,6 +373,17 @@ extension NSAttributedString {
      */
     public func withWritingDirections(_ directions: [WritingDirection]) -> NSMutableAttributedString {
         return withAttribute(.writingDirections(directions))
+    }
+
+    /**
+     Creates an attributed string with a custom attribute. This can be useful for storing key-value information.
+
+     - parameter    key:    The name of the custom attribute.
+     - parameter    value:  The value of the attribute.
+     - returns:             A new attributed string with the newly added attribute.
+     */
+    public func withCustomAttribute(named key: String, value: Any) -> NSMutableAttributedString {
+        return withAttribute(.custom(key, value))
     }
 
 }
